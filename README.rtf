@@ -1,194 +1,96 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2511
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Oblique;\f2\fswiss\fcharset0 Helvetica-Bold;
-\f3\fswiss\fcharset0 Helvetica-BoldOblique;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww23600\viewh13240\viewkind0
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+This folder contains data and reproducing scripts for the manuscript titled
+“Towards causal inference for spatio-temporal data: adjusting for time-invariant latent confounders”
+submitted to JASA Case Studies on April ??? 2020
+Authors: Rune Christiansen, Jonas Peters, Matthias Baumann, Tobias Kümmerle, Miguel Mahecha
+Address for correspondence: krunechristiansen@math.ku.dk
 
-\f0\fs24 \cf0 This folder contains data and reproducing scripts for the manuscript titled\
-\'93Towards causal inference for spatio-temporal data: adjusting for time-invariant latent confounders\'94\
-submitted to 
-\f1\i Annals of Applied Probability 
-\f0\i0 on April ??? 2020\
-Authors: Rune Christiansen, Jonas Peters, Matthias Baumann, Tobias K\'fcmmerle, Miguel Mahecha\
-Address for correspondence: krunechristiansen@math.ku.dk\
-\
-%%%%%%%%%%%%%%  Implementation of our procedure  %%%%%%%%%%%%%%%\
-\
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+%%%%%%%%%%%%%%  Implementation of our procedure  %%%%%%%%%%%%%%%
 
-\f2\b \cf0 All relevant files are contained in the 
-\f3\i examples
-\f2\i0  directory
-\f0\b0 \
-\
-An implementation of our procedure can be found in the script\
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+All relevant files are contained in the examples directory
 
-\f1\i \cf0 example.R
-\f0\i0 \
-which applies our methodology to the Example 9 in our manuscript\
-\
-\
-\
-%%%%%%%%%%%%%%  Figures and results  %%%%%%%%%%%%%%%\
-\
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+An implementation of our procedure can be found in the script
+example.R
+which applies our methodology to the Example 9 in our manuscript
 
-\f2\b \cf0 All relevant files are contained in the 
-\f3\i figure_scripts
-\f2\i0  directory
-\f0\b0 \
-\
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f2\b \cf0 \ul \ulc0 Figure 1:  
-\f0\b0 \ulnone \
 
-\f1\i - spatial_maps.R
-\f0\i0 \
-\
+%%%%%%%%%%%%%%  Figures and results  %%%%%%%%%%%%%%%
 
-\f2\b \ul Figure 2:
-\f0\b0 \ulnone \
+All relevant files are contained in the figure_scripts directory
 
-\f1\i - concept.R
-\f0\i0 \
-\
+Figure 1:  
+- spatial_maps.R
 
-\f2\b \ul Figure 3:
-\f0\b0 \ulnone \
+Figure 2:
+- concept.R
 
-\f1\i - CSTM_example_consistency.R
-\f0\i0 \
-\
+Figure 3:
+- CSTM_example_consistency.R
 
-\f2\b \ul Figure 4:
-\f0\b0 \ulnone \
-
-\f1\i - resampling_sim.R \
+Figure 4:
+- resampling_sim.R 
 - resampling_plot.R
-\f0\i0 \
-\
 
-\f2\b \ul Figure 5:
-\f0\b0 \ulnone \
+Figure 5:
+peace_agreement.R
 
-\f1\i peace_agreement.R
-\f0\i0 \
-\
+temporal lag: 
+- resampling_tlag1.R
 
-\f2\b \ul temporal lag: 
-\f0\b0 \ulnone \
+blockresampling: 
+- blockresampling.R
 
-\f1\i - resampling_tlag1.R
-\f0\i0 \
-\
+temporal lag & blockresampling: 
+- blockresampling_tlag1.R
 
-\f2\b \ul blockresampling: 
-\f0\b0 \ulnone \
 
-\f1\i - blockresampling.R
-\f0\i0 \
-\
 
-\f2\b \ul temporal lag & blockresampling: 
-\f0\b0 \ulnone \
 
-\f1\i - blockresampling_tlag1.R
-\f0\i0 \
-\
-\
-\
-\
-%%%%%%%%%%%%%%  Data preprocessing  %%%%%%%%%%%%%%%\
-\
+%%%%%%%%%%%%%%  Data preprocessing  %%%%%%%%%%%%%%%
 
-\f2\b All relevant files are contained in the 
-\f3\i data
-\f2\i0  directory
-\f0\b0 \
-\
-All of our analyses are based on the dataset \
+All relevant files are contained in the data directory
 
-\f1\i data_colombia_xy_20200327.txt
-\f0\i0 \
-which is produced by the script\
+All of our analyses are based on the dataset 
+data_colombia_xy_20200327.txt
+which is produced by the script
+merge_data.R
+This script takes as input 4 main datasets
+uniqueID_country-province.txt (meta data)
+Hansen_Summaries_ALL_20190821.csv (forest loss)
+PRIO-summaries_bestEstimate_20191217 (conflict)
+GPWv4_summary_20190129.csv (population density)
+The first data set can be found in the root folder, the other three can be obtained as described below
 
-\f1\i merge_data.R\
 
-\f0\i0 This script takes as input 4 main datasets\
+1. Forest loss
+Running the script 00_Download_ForestLossData.py downloads this data from 
+https://earthenginepartners.appspot.com/science-2013-global-forest/download_v1.6.html
+and saves it to the files Forest2000.vrt, Gain.vrt, and LossYear.vrt.
+The script 01_ForestLoss_Summaries.py then summarizes the data to 10x10km grid cells and saves it to
+Hansen_Summaries_ALL_20190821.csv. 
 
-\f1\i uniqueID_country-province.txt (meta data)
-\f0\i0 \
+2. Conflict
+Is downloaded from
+https://ucdp.uu.se/downloads/index.html#ged_global
+(choose ”UCDP Georeferenced Event Dataset (GED) Global version 19.1” in SHX format)
+and saved to the file ged181.shp. 
+The script 02_Conflict-Summaries.py then summarizes the data to 10x10km grid cells and saves it to
+PRIO-summaries_bestEstimate_20191217.
 
-\f1\i Hansen_Summaries_ALL_20190821.csv (forest loss)\
-PRIO-summaries_bestEstimate_20191217 (conflict)\
-GPWv4_summary_20190129.csv (population density)\
-
-\f0\i0 The first data set can be found in the root folder, the other three can be obtained as described below\
-\
-\
-
-\f2\b \ul 1. Forest loss\
-
-\f0\b0 \ulnone Running the script 
-\f1\i 00_Download_ForestLossData.py
-\f0\i0  downloads this data from \
-https://earthenginepartners.appspot.com/science-2013-global-forest/download_v1.6.html\
-and saves it to the files 
-\f1\i Forest2000.vrt, Gain.vrt
-\f0\i0 , and 
-\f1\i LossYear.vrt.
-\f0\i0 \
-The script 
-\f1\i 01_ForestLoss_Summaries.py 
-\f0\i0 then summarizes the data to 10x10km grid cells and saves it to\
-
-\f1\i Hansen_Summaries_ALL_20190821.csv. \
-\
-
-\f2\i0\b \ul 2. Conflict
-\f0\b0 \ulnone \
-Is downloaded from\
-https://ucdp.uu.se/downloads/index.html#ged_global\
-(choose \'94UCDP Georeferenced Event Dataset (GED) Global version 19.1\'94 in SHX format)\
-and saved to the file 
-\f1\i ged181.shp. \
-
-\f0\i0 The script 
-\f1\i 02_Conflict-Summaries.py
-\f0\i0  then summarizes the data to 10x10km grid cells and saves it to\
-
-\f1\i PRIO-summaries_bestEstimate_20191217.\
-\
-
-\f2\i0\b \ul 3. Population density\
-
-\f0\b0 \ulnone For each of the years 2000, 2005, 2010, 2015 is downloaded from\
-https://sedac.ciesin.columbia.edu/data/set/gpw-v4-population-density-rev11/data-download\
-(choose Temporal: Single Year, FileFormat: Geo Tiff, Resolution: 30 seconds (approx. 1km))\
-and saved to the respective files\
-
-\f1\i gpw_v4_population_density_rev10_2000_30_sec.tif\
-gpw_v4_population_density_rev10_2005_30_sec.tif\
-gpw_v4_population_density_rev10_2010_30_sec.tif\
+3. Population density
+For each of the years 2000, 2005, 2010, 2015 is downloaded from
+https://sedac.ciesin.columbia.edu/data/set/gpw-v4-population-density-rev11/data-download
+(choose Temporal: Single Year, FileFormat: Geo Tiff, Resolution: 30 seconds (approx. 1km))
+and saved to the respective files
+gpw_v4_population_density_rev10_2000_30_sec.tif
+gpw_v4_population_density_rev10_2005_30_sec.tif
+gpw_v4_population_density_rev10_2010_30_sec.tif
 gpw_v4_population_density_rev10_2015_30_sec.tif
-\f0\i0 \
-The script 	
-\f1\i 03_Population-Summaries.py 
-\f0\i0 then summarizes the data to 10x10km grid cells and saves it to\
+The script 	03_Population-Summaries.py then summarizes the data to 10x10km grid cells and saves it to
+GPWv4_summary_20190129.csv
 
-\f1\i GPWv4_summary_20190129.csv\
-\
 
-\f2\i0\b \ul \
-
-\f0\b0 \ulnone Above, we summarize all data sets onto a common 10x10km grid, which is contained in the file \
-
-\f1\i BIOMES_TropicsSavannas_10kmGrid_polygons.shp\
-
-\f0\i0 which can also be found in the root folder. This is \expnd0\expndtw0\kerning0
-done to ensure that the raster data are being \
-reprojected into an equal area projection.}
+Above, we summarize all data sets onto a common 10x10km grid, which is contained in the file 
+BIOMES_TropicsSavannas_10kmGrid_polygons.shp
+which can also be found in the root folder. This is done to ensure that the raster data are being 
+reprojected into an equal area projection.
