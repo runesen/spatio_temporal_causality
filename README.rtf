@@ -1,16 +1,18 @@
-This folder contains data and reproducing scripts for the manuscript titled
-“Towards causal inference for spatio-temporal data: adjusting for time-invariant latent confounders”
-submitted to JASA Case Studies on April ??? 2020
-Authors: Rune Christiansen, Jonas Peters, Matthias Baumann, Tobias Kümmerle, Miguel Mahecha
+This folder contains data and reproducing scripts for the manuscript
+“Towards Causal Inference for Spatio-Temporal Data: Conflict and Forest Loss in Colombia”
+[arXiv link]
+submitted to JASA Case Studies on May ??? 2020
+Authors: Rune Christiansen, Matthias Baumann, Tobias Kümmerle, Miguel Mahecha, Jonas Peters
 Address for correspondence: krunechristiansen@math.ku.dk
+all rights reserved
 
 %%%%%%%%%%%%%%  Implementation of our procedure  %%%%%%%%%%%%%%%
 
-All relevant files are contained in the examples directory
+All relevant files are contained in the "examples" directory
 
 An implementation of our procedure can be found in the script
-example.R
-which applies our methodology to the Example 9 in our manuscript
+- example.R
+which applies our methodology to Example 10 in our manuscript
 
 
 
@@ -18,47 +20,57 @@ which applies our methodology to the Example 9 in our manuscript
 
 All relevant files are contained in the figure_scripts directory
 
-Figure 1:  
-- spatial_maps.R
+Figure 1 (temporally aggregated summary of dataset):
+- construct_summary_dataset.R
+- ???
 
-Figure 2:
+Figure 2 (conceptual idea for estimating causal effects from obs. data):
 - concept.R
 
-Figure 3:
+Figure 3 (simulation experiment):
 - CSTM_example_consistency.R
 
-Figure 4:
+Figure 4 (results of resampling test on country level):
 - resampling_sim.R 
 - resampling_plot.R
 
-Figure 5:
-peace_agreement.R
+Figure 5 (results on department level):
+- construct_summary_dataset.R
+- ???
 
-temporal lag: 
+Figure 6 (Colombian peace process):
+- peace_agreement.R
+
+Figure 7 (Plot illustrating example in remark):
+- plot_remark.R
+
+Figure 8 (Spatial block-premutation scheme): 
+- spatial_blockresampling.R
+
+temporally lagged causal effects: 
 - resampling_tlag1.R
 
-blockresampling: 
+temporal block-resampling:
 - blockresampling.R
 
-temporal lag & blockresampling: 
+temporally lagged causal effects + temporal block-resampling: 
 - blockresampling_tlag1.R
-
-
 
 
 %%%%%%%%%%%%%%  Data preprocessing  %%%%%%%%%%%%%%%
 
-All relevant files are contained in the data directory
+All relevant files are contained in the "data" directory
 
 All of our analyses are based on the dataset 
 data_colombia_xy_20200327.txt
 which is produced by the script
 merge_data.R
-This script takes as input 4 main datasets
+This script takes as input 5 main datasets
 uniqueID_country-province.txt (meta data)
 Hansen_Summaries_ALL_20190821.csv (forest loss)
 PRIO-summaries_bestEstimate_20191217 (conflict)
 GPWv4_summary_20190129.csv (population density)
+PanelData_20180531 (other covariates, including distance to road)
 The first data set can be found in the root folder, the other three can be obtained as described below
 
 
@@ -88,6 +100,9 @@ gpw_v4_population_density_rev10_2010_30_sec.tif
 gpw_v4_population_density_rev10_2015_30_sec.tif
 The script 	03_Population-Summaries.py then summarizes the data to 10x10km grid cells and saves it to
 GPWv4_summary_20190129.csv
+
+4. Panel covariate data
+???
 
 
 Above, we summarize all data sets onto a common 10x10km grid, which is contained in the file 
