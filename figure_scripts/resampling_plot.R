@@ -14,7 +14,7 @@ res.frame <- read.table("resampling_data.txt", header = TRUE)
 subset(res.frame, b == 0)
 # ts_noconf = 0.073
 # ts_popdens = 0.037
-# ts_roaddist = 0.037
+# ts_roaddist = 0.049
 # ts_lscm = -0.018
 
 # p-value for two-sided test

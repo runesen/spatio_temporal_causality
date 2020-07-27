@@ -11,7 +11,7 @@ theme_set(theme_bw())
 
 # dat1 <- read.table("data_xy_colombia_20191219.txt", header = TRUE)
 # dat1 <- read.table("data_xy_colombia_20200316.txt", header = TRUE)
-dat1 <- read.table("data_xy_colombia_20200327.txt", header = TRUE)
+dat1 <- read.table("data_xy_colombia_20200616.txt", header = TRUE)
 w <- which(dat1$xFor2000_ge25==0)
 dat1 <- dat1[-w,]
 n <- nrow(dat1)

@@ -10,7 +10,7 @@ library(reshape2)
 theme_set(theme_bw())
 
 
-df <- read.table("data_xy_colombia_20200327.txt", header = TRUE)
+df <- read.table("data_xy_colombia_20200616.txt", header = TRUE)
 n <- nrow(df)
 nt <- length(unique(df$Year))
 ns <- length(unique(df$PolygonID))
