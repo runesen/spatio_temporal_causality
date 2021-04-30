@@ -25,7 +25,7 @@ Note that current versions of RStudio for Mac (this will change with RStudio ver
 
 This folder contains data and reproducing scripts for the manuscript
 “Towards Causal Inference for Spatio-Temporal Data: Conflict and Forest Loss in Colombia”
-submitted to JASA Case Studies on May 26 2020
+submitted to JASA Case Studies on April 30 2021
 
 
 # Part 1: Data
