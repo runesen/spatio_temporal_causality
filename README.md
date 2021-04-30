@@ -1,7 +1,7 @@
 ---
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 <!--HOW TO COMPLETE THIS FORM:-->
 
@@ -308,7 +308,11 @@ data_xy_colombia_20200327.txt by running corresponding R scripts.
     + Layers were visually assembled in ArcMAp 10.5
 * Figure 6 (Colombian peace process): run peace_agreement.R
 * Figure 7 (Plot illustrating example in remark): run plot_remark.R
-* Figure 8 (Spatial block-premutation scheme): run spatial_blockresampling.R
+* Figure 8 (Histogram of coefficient estimates): run time-varying-confounders-sim.R and time-varying-confounders-plot.R
+* Figure 9 (Power curves): run power-analysis-sim.R and power-analysis-plot.R
+* Figure 10 (Bias-heatmaps): run bias-analysis-sim.R and bias-analysis-plot.R
+* Figure 11 (Spatial block-premutation scheme): run spatial_blockresampling.R
+
 
 
 #### Results
