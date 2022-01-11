@@ -293,33 +293,34 @@ GPWv4_summary_20190129.csv
 #### Figures
 
 Apart from Figures 1 and 5, all our figures can be generated from the data set 
-data_xy_colombia_20200327.txt by running corresponding R scripts.
+data_xy_colombia_20200327.txt by running corresponding R scripts. The 
+file wrapper-figures.R produces all figures sequentially, and saves them as .pdf files.
 
 * Figure 1 (temporally aggregated summary of data set): 
-    + Run construct_summary_dataset.R, which generates the file data_xy_colombia_temporally_aggregated_20200616.txt
+    + Run construct_summary_dataset.R, which generates data_xy_colombia_temporally_aggregated_20200616.txt
     + Layers were visually assembled in ArcMAp 10.5
 * Figure 2 (conceptual idea for estimating causal effects from obs. data): run concept.R 
 * Figure 3 (simulation experiment): run CSTM_example_consistency.R
 * Figure 4 (results of resampling test on country level): run resampling_sim.R and resampling_plot.R
 * Figure 5 (regional summaries, causal effects and FARC presence): 
-    + run construct_summary_dataset.R, which generates the file data_xy_colombia_regional_summaries_20200432.txt 
+    + run construct_summary_dataset.R, which generates data_xy_colombia_regional_summaries_20200432.txt 
     + run regional_effects.R, which generates the file regional_effects.txt 
     + data on FARC presence stem from: https://pares.com.co/2015/04/24/los-mapas-del-conflicto/
     + Layers were visually assembled in ArcMAp 10.5
 * Figure 6 (Colombian peace process): run peace_agreement.R
-* Figure 7 (Plot illustrating example in remark): run plot_remark.R
-* Figure 8 (Histogram of coefficient estimates): run time-varying-confounders-sim.R and time-varying-confounders-plot.R
-* Figure 9 (Power curves): run power-analysis-sim.R and power-analysis-plot.R
-* Figure 10 (Bias-heatmaps): run bias-analysis-sim.R and bias-analysis-plot.R
-* Figure 11 (Spatial block-premutation scheme): run spatial_blockresampling.R
-
+* Figure E1 (Plot illustrating the example in Remark 6; supplementary material): run plot_remark.R
+* Figure F1 (Histogram of coefficient estimates; supplementary material): run time-varying-confounders-sim.R and time-varying-confounders-plot.R
+* Figure F2 (Power curves; supplementary material): run power-analysis-sim.R and power-analysis-plot.R
+* Figure F3 (Bias-heatmaps; supplementary material): run bias-analysis-sim.R and bias-analysis-plot.R
+* Figure G1 (Spatial block-premutation scheme; supplementary material): run spatial_blockresampling.R
 
 
 #### Results
 
 All results on test statistics and p-values stated in our 
 manuscript can be reproduced from data_xy_colombia_20200327.txt
-using the below scripts.
+using the below scripts. The file wrapper-results.R 
+produces all results sequentially, and saves them as .txt files.
 
 * instantaneous effects, standard resampling: run resampling_sim.R
 * temorally lagged effects, standard resampling: run resampling_tlag1.R
